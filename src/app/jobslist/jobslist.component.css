@@ -1,0 +1,21 @@
+#fa2 {
+  color: red;
+}
+#fa1 {
+  color: green;
+}
+#fa3 {
+  color: blue;
+}
+#jumbo2 {
+  background-color: rgba(122, 191, 247, 0.671);
+  float: center;
+}
+
+#image {
+  height: 75em;
+  background-size: cover;
+  width: auto;
+  background-image: url("https://images.unsplash.com/photo-1504532724559-22878efd533a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f50a07dc64c3d92f605cebee5cfa600c&auto=format&fit=crop&w=634&q=80");
+  background-position: 50% 50%;
+}

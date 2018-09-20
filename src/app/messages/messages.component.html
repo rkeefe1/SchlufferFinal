@@ -1,0 +1,96 @@
+<body>
+    <input id="username" readonly="readonly" [(ngModel)]="currentProfile.username">'s Messages:
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li [ngClass]="{'active': activeTab == 'inbox'}">
+                <a (click)="activeTab='inbox'"><button type="button" class="btn btn-info">Inbox</button>
+            </a>
+                <!-- 09Need to create a drop down with users for email using an [(ngModel)] = "composeMessage.toUserId" to get -->
+            </li>
+            <br>
+            <li [ngClass]="{'active': activeTab == 'sent'}">
+                <a (click)="activeTab='sent'"><button type="button" class="btn btn-warning">Sent</button>
+            </a>
+            </li>
+        </ul>
+        <table *ngIf="activeTab=='inbox'" class="table table-bordered table-condensed">
+            <tbody>
+                <tr *ngFor="let message of messages" (click)="showPopup(message,content)">
+                    <td style="text-transform: uppercase;">{{ currentProfile.username }}</td>
+                    <td>{{ message.subject }}</td>
+                    <td>{{ message.date | date:'MMM d' }}</td>
+                    <tr *ngFor="let message of messages1" (click)="showPopup(message,content)">
+                        <td style="text-transform: uppercase;">{{ message.author }}</td>
+                        <td>{{ message.subject }}</td>
+                        <td>{{ message.date | date:'MMM d' }}</td>
+                    </tr>
+            </tbody>
+        </table>
+        <table *ngIf="activeTab=='sent'" class="table table-bordered table-condensed">
+            <tbody>
+                <tr *ngFor="let message of sentMessages" (click)="showPopup(message,content)">
+                    <td style="text-transform: uppercase;">{{ currentProfile.username }}</td>
+                    <td>{{ message.subject }}</td>
+                    <td>{{ message.date | date:'MMM d' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="showComposePopup(compose)">Compose</button>
+        <!-- {{isPopupVisible}} -->
+        <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="closePopup()">&times;</button>
+                <h3>{{ selectedMessage.subject }}</h3>
+            </div>
+            <div class="modal-body">
+                <strong>From:</strong> {{ selectedMessage.author || selectedMessage.fromUserId || currentProfile.username }}<br />
+                <strong>To:</strong> {{ currentProfile.username || selectedMessage.toUser || selectedMessage.toUserId }}<br />
+                <strong>Date:</strong> {{ selectedMessage.date | date:'MMM d' }}<br />
+                <br /> {{selectedMessage.message}}
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn">Forward</a>
+                <a href="#" class="btn">Reply</a>
+                <button class="btn btn-primary" (click)="c('Close click')">Close</button>
+            </div>
+        </ng-template>
+        <ng-template #compose let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="closeComposePopup()">&times;</button>
+                <h3>Compose Message</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <span>From: </span>
+                    <input id="compose1" readonly="readonly" [(ngModel)]="currentProfile.username || composeMesssage.fromUserId" name="from"><br/>
+
+
+                    <div class="btn-group mr-3">
+                        <span>To: </span>
+                        <button type="button" class="btn btn-sm btn-secondary">Active Users</button>
+                        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                            <button class="btn btn-sm btn-secondary dropdown-toggle-split" ngbDropdownToggle></button>
+                            <div class="dropdown-menu" ngbDropdownMenu>
+                                <button id="compose2" class="dropdown-item" placeholder="To" style="width:90%;" [(ngModel)]="composeMessage.toUserId" name="to" (click)="composeMessage.toUserId">{{composeMessage.toUserId}}</button>
+
+                            </div><br/>
+                            <input id="compose4" type="text" placeholder="Enter Username" style="width:90%; text-transform: uppercase;" [(ngModel)]="composeMessage.toUserId" name="to"><br />
+                        </div>
+                    </div>
+
+
+                    <input id="compose3" type="text" placeholder="Subject" style="width:95%;" [(ngModel)]="composeMessage.subject" name="subject"><br />
+                    <textarea style="width:95%;" rows="10" [(ngModel)]="composeMessage.message" name="message"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" (click)="c('Close click')">Close</button>
+
+                <button class="btn btn-primary" (click)="sendMessage() || c('Close click')">Send</button>
+            </div>
+
+        </ng-template>
+    </div>
+    <br>
+    <br>
+</body>

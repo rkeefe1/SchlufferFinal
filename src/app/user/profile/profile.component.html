@@ -1,0 +1,27 @@
+<div id="top">
+    <h1>PROFILE
+    </h1>
+</div>
+<!-- <ngx-avatar class="avatar" [name]="firstLetter" size="100" [round]="true"></ngx-avatar> -->
+<!-- <ngx-avatar class="avatar align-content-center flex-column flex-inline-row flex-{grow|shrink}-1 d-flex flex-nowrap" [email]="firstLetter" [displayType]="'circle'"></ngx-avatar> -->
+<div id="bottom">
+    <ngx-avatar class="avatar" [name]="firstLetter" size="110" [round]="true"></ngx-avatar><br/>
+    <button class="logout" mat-button (click)="onLogout() && socialSignOut('google')" *ngIf="isLoggedIn"><label>Log Out</label></button>
+    <ul class="social">
+        <!-- <img src="https://static1.squarespace.com/static/58da61243a0411e118c534d9/5ab7ed2e88251b198c3e5d48/5ab7ed2e03ce64c499d195db/1522003251202/Bear.png"> -->
+        <!-- <ngx-avatar class="avatar" [name]="firstLetter" size="100" [round]="true"></ngx-avatar> -->
+        <h1>
+            <span><input id="usernameInput" readonly="readonly" [(ngModel)]="currentProfile.username"></span>
+        </h1>
+        <li class="create">
+            <a [routerLink]="['/jobs']"><label class="entypo-keyboard"></label></a>
+        </li>
+        <li class="edit">
+            <a [routerLink]="['/jobslist']"><label class="entypo-pencil"></label></a>
+        </li>
+        <li class="messaging">
+            <a [routerLink]="['/messages']"><label class="entypo-mixi"></label></a>
+        </li>
+    </ul>
+
+</div>

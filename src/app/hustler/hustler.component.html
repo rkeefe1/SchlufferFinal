@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(160, 164, 168, 0.486);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image">
+        <div id="jumbo2" class="jumbotron">
+            <input name="term" type="search" placeholder="type keyword to search" aria-label="Search" [(ngModel)]="term">
+            <table>
+                <tr>
+                    <th>Job Category</th>
+                    <th>Job Description</th>
+                    <th>Job Price</th>
+                    <th>Job Id</th>
+                    <th>Username</th>
+                    <!-- <th>Delete</th> -->
+                    <th>Message</th>
+                    <!-- <th>Edit</th> -->
+
+                </tr>
+                <tr *ngFor="let jobs  of jobsList | filter: term">
+                    <td>{{jobs.type}}</td>
+                    <td>{{jobs.description}}</td>
+                    <td>{{jobs.price}}</td>
+                    <td>{{jobs.id}}</td>
+                    <td>{{currentProfile.username}}</td>
+
+                    <td>
+                        <!-- <a class="" routerLink="/messages"><button> <fa id="fa3" name="envelope-square" animation="" size="3x" class="btn btn-secondary btn-sm">
+              </button></a> -->
+                        <button routerLink="/messages"><fa id="fa3" name="envelope-square" animation="" size="3x" class="btn btn-secondary btn-sm"></fa>
+              </button>
+                    </td>
+
+                </tr>
+            </table>
+
+            <div *ngFor="let jobs of jobsList | filter: term">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

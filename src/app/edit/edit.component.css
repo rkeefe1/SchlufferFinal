@@ -1,0 +1,24 @@
+#image {
+  height: 30em;
+  background-size: cover;
+  width: auto;
+  background-image: url("https://images.unsplash.com/photo-1496127626367-7698d72f1cd6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ca8ea12e97ee7595307cc0c9b8bab42&auto=format&fit=crop&w=750&q=80");
+  background-position: 50% 50%;
+}
+.card {
+  background-color: rgba(90, 108, 131, 0.363);
+}
+select {
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+option:not(:checked) {
+  background-color: white;
+  color: #000;
+}
+input {
+  background-color: rgba(247, 215, 112, 0.3);
+  color: #fff;
+}

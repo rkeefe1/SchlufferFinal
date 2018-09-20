@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+.container {
+    margin-top: 40px;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1493898719456-b0e84bba5fcc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4d58cd5a9bcd05b82c3b6ffaa92796c4&auto=format&fit=crop&w=750&q=80");
+    background-size: cover;
+    height: 30em;
+    width: auto;
+}
+
+#username {
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 3.5vw;
+    /* font-weight: 320; */
+    background: transparent;
+    border: none;
+    width: 550px;
+}
+
+#compose1 {
+    text-transform: uppercase;
+    padding-top: 1vmin;
+    text-align: left;
+    font-size: 3.5vw;
+    font-weight: 320;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+#compose2 #compose3 #compose4 {
+    padding-top: 1vmin;
+    text-align: left;
+    font-size: 3.5vw;
+    font-weight: 320;
+    margin: 0;
+    background: transparent;
+    border: none;
+}

@@ -1,0 +1,35 @@
+<footer>
+    <div id="container">
+        <a class="box-no-padding appstore-badge" href="https://dvc-w.tlnk.io/" target="_blank">
+            <img alt="Download on the App Store" height="15" src="https://assets.taskrabbit.com/v3/assets/web/icons/appstore_badge-ee307f8da9d465811307754126487373.svg" />
+        </a>
+        <a class="box-no-padding appstore-badge" href="https://play.google.com/store/apps" target="_blank">
+            <img alt="Get it on Google Play" height="15" src="https://assets.taskrabbit.com/v3/assets/web/icons/google_play_badge-5edfe9b1d9a06128b6d75ce7d8e88657.svg" />
+        </a>
+
+        <span class="attribution">
+              |  &copy; {{today | date: 'yyyy'}}, Schluffer.com     *Built by Team Hustle   |    
+            </span>&nbsp;&nbsp;
+        <span class="extNavigation">
+                <button type="button" class="btn btn-outline-info btn-sm" placement="top" ngbPopover="Schluff it off!
+            Instantly connect with skilled Hustlers to help with odd-jobs and errands, so you can be more productive while being lazy, every day.
+            Schluffer will double its presence in over 40 markets across the United States with a plan to expand globally in the years to come.
+            In addition to shaping the future of work, Schluffer is a core driver making everyday life easier for everyone."
+                    popoverTitle="About the Schluffer App" #popover="ngbPopover" (shown)="recordShown()" (hidden)="recordHidden()">
+                    About
+                </button>&nbsp;
+                <a href="https://www.galloree.com/SCHLUFFER-9563.htm" target="_blank">
+                <button type="button" class="btn btn-outline-warning btn-sm">Merch
+                            </button></a>&nbsp;
+                <button type="button" class="btn btn-outline-danger btn-sm" placement="top" ngbPopover="For media inquiries, please email press@schluffer.com.
+    For customer support and other inquiries, please visit support@schluffer.com."
+                    popoverTitle="Get In Touch!" #popover="ngbPopover" (shown)="recordShown()" (hidden)="recordHidden()">
+                    Contact
+                </button>&nbsp;
+                <button type="button" class="btn btn-outline-secondary btn-sm" placement="top" ngbPopover="These Terms of Service constitute a legally binding agreement between you and Schluffer, Inc. (“Company” or “Schluffer”) governing your use of the Schluffer Platform, website (https://www.Schluffer.com), and mobile applications. Any personal data you submit to the Schluffer or we collect about you is governed by our Privacy Policy which you acknowledge reviewing and accept."
+                    popoverTitle="What You Should Know!" #popover="ngbPopover" (shown)="recordShown()" (hidden)="recordHidden()">
+                    Terms
+                </button>
+            </span>
+    </div>
+</footer>

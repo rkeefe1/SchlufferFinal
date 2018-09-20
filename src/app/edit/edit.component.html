@@ -1,0 +1,45 @@
+<div id="image">
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/jobslist" class="btn btn-link"> <button type="button" class="btn btn-info">Back To JobsList
+                </button> </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Edit Job
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="type">Category</label>
+                <select [(ngModel)]="jobs.type">
+                    <option value="Household">Household</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Errands">Errands</option>
+                    <option value="Labor">Labor</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Rideshare">Rideshare</option>
+                </select>
+                <br>
+                <label for="price">Price</label>
+                <select [(ngModel)]="jobs.price">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select>
+                <br>
+                <label for="description">Description</label>
+                <input type="text" class="form-control" name="description" [(ngModel)]="jobs.description">
+
+            </div>
+
+            <button type="button" class="btn btn-outline-warning" (click)="editJob()">Save
+            </button>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+footer {
+    background: #acf173;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+}
+
+span.extNavigation {
+    /* display: inline-block; */
+    position: relative;
+    top: 2;
+    bottom: 1;
+    right: 0;
+}
